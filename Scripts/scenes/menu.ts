@@ -4,6 +4,7 @@ module scenes {
         
         // Private instance variables
         private _helloLabel: createjs.Text;
+        private _startButton: objects.Button;
         
         // Constructor
         constructor() {
@@ -22,12 +23,29 @@ module scenes {
             this._helloLabel.y = config.Screen.CENTER_Y;
 
             this.addChild(this._helloLabel);
+            
+            this._startButton = new objects.Button(
+            "StartButton", 
+            config.Screen.CENTER_X, 
+            config.Screen.CENTER_Y + 60);
+            
+            this.addChild(this._startButton);
+            
+            this._startButton.on("click", this._startButtonClick, this);
+            
             stage.addChild(this);
         }
         
         // Menu Scene updates here
         public update(): void {
-            this._helloLabel.rotation += 5;
+            
         }
+        
+        // Event Handlers
+        
+        private _startButtonClick(event: createjs.MouseEvent) {
+            this._helloLabel.text = "Game Started";   
+        }
+        
     }
 }
