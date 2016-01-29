@@ -2,7 +2,7 @@
 // Global Variables
 var canvas;
 var stage;
-var helloLabel;
+var menu;
 function init() {
     // Create a reference to HTML Canvas element
     canvas = document.getElementById("canvas");
@@ -16,17 +16,12 @@ function init() {
 }
 // Main gameLoop function that handles what happens each "tick" or frame
 function gameLoop(event) {
-    helloLabel.rotation += 5;
+    menu.update();
     stage.update();
 }
+//This function is executed one time
 function main() {
-    console.log("Game Started...");
-    helloLabel = new createjs.Text("Hello World!", "60px Consolas", "#000000");
-    helloLabel.regX = helloLabel.getMeasuredWidth() * 0.5;
-    helloLabel.regY = helloLabel.getMeasuredHeight() * 0.5;
-    helloLabel.x = config.Screen.CENTER_X;
-    helloLabel.y = config.Screen.CENTER_Y;
-    stage.addChild(helloLabel);
+    menu = new scenes.Menu();
 }
 /*
 // GLOBAL GAME FRAMEWORK VARIABLES
