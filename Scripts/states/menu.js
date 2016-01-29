@@ -5,7 +5,7 @@ var states;
     function menu() {
         scene = new createjs.Container();
         // hello label
-        helloLabel = new objects.Label("Game Start", "60px Consolas", "#000000", 320, 240);
+        helloLabel = new objects.Label("Hello TypeScript!", "60px Consolas", "#000000", 320, 240);
         scene.addChild(helloLabel); // add label to the stage
         // start button
         startButton = new objects.Button("StartButton", 320, 340);
